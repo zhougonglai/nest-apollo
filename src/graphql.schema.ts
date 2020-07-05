@@ -6,52 +6,30 @@
 
 /* tslint:disable */
 /* eslint-disable */
-export class LoginByPwdInput {
-    countryCode: number;
-    pwdEncry: string;
-    type: string;
-    username: string;
+export class TokenInput {
+    method?: string;
+    mob?: string;
+    pwd?: string;
 }
 
-export class User {
-    ageScope?: string;
-    birthday?: string;
-    cityCode?: number;
-    cityId?: number;
-    cityName?: string;
-    countryCode?: number;
-    countyId?: number;
-    createTime?: string;
-    dbId?: number;
-    email?: string;
-    gameId?: number;
-    isDelete?: boolean;
-    nickName: string;
-    nnNumber: string;
-    page?: number;
-    pageSize?: number;
-    password?: string;
-    provinceCode?: number;
-    provinceId?: number;
-    provinceName?: string;
-    pwdEncry?: string;
-    salt?: string;
-    sex?: string;
-    signature?: string;
-    smsCode?: string;
-    smsCodeKey?: string;
-    srcChannel?: string;
-    status?: string;
-    telNum?: string;
-    token: string;
-    updaeTime?: string;
-    userId: string;
-    userType?: string;
-    userUrl?: string;
-    userUrlNn?: string;
-    username?: string;
+export class AllSecurities {
+    method?: string;
+    token?: string;
+    code?: string;
 }
 
 export abstract class IQuery {
-    abstract loginByPwd(loginByPwdInput?: LoginByPwdInput): User | Promise<User>;
+    abstract get_token(tokenInput?: TokenInput): string | Promise<string>;
+
+    abstract get_all_securities(allSecurities?: AllSecurities): string | Promise<string>;
+
+    abstract loginById(id: string): User | Promise<User>;
+}
+
+export class User {
+    id: string;
+    email: string;
+    first_name?: string;
+    last_name?: string;
+    avatar?: string;
 }

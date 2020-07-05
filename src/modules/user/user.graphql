@@ -1,49 +1,11 @@
 type User {
-  ageScope: String
-  birthday: String
-  cityCode: Int
-  cityId: Int
-  cityName: String
-  countryCode: Int
-  countyId: Int
-  createTime: String
-  dbId: Int
-  email: String
-  gameId: Int
-  isDelete: Boolean
-  nickName: String!
-  nnNumber: ID!
-  page: Int
-  pageSize: Int
-  password: String
-  provinceCode: Int
-  provinceId: Int
-  provinceName: String
-  pwdEncry: String
-  salt: String
-  sex: String
-  signature: String
-  smsCode: String
-  smsCodeKey: String
-  srcChannel: String
-  status: String
-  telNum: String
-  token: String!
-  updaeTime: String
-  userId: ID!
-  userType: String
-  userUrl: String
-  userUrlNn: String
-  username: String
+  id: ID!
+  email: String!
+  first_name: String
+  last_name: String
+  avatar: String
 }
 
 type Query {
-  loginByPwd(loginByPwdInput: LoginByPwdInput): User
-}
-
-input LoginByPwdInput {
-  countryCode: Int!
-  pwdEncry: String!
-  type: String!
-  username: ID!
+  loginById(id: ID!): User
 }

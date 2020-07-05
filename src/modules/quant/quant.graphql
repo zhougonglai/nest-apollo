@@ -1,0 +1,16 @@
+type Query {
+  getToken(tokenInput: TokenInput!): String
+  getAllSecurities(allSecurities: AllSecurities!): String
+}
+
+input TokenInput {
+  method: String!
+  mob: String!
+  pwd: String!
+}
+
+input AllSecurities {
+  method: String!
+  token: String!
+  code: String!
+}
