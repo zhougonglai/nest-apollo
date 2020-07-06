@@ -3,8 +3,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './modules/user/user.module';
-import { join } from 'path';
 import { QuantModule } from './modules/quant/quant.module';
+import { EventsModule } from './modules/events/events.module';
 
 @Module({
   imports: [
@@ -14,6 +14,7 @@ import { QuantModule } from './modules/quant/quant.module';
     }),
     UserModule,
     QuantModule,
+    EventsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
