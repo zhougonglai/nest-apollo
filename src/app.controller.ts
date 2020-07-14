@@ -8,7 +8,7 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    console.log('constants', constants);
+    console.log('constants', constants.default);
     return this.appService.getHello();
   }
 }

@@ -1,3 +1,6 @@
 export class NNResponse<T> {
-  data: T;
+  retCode: string;
+  retData: T;
+  retMsg: string;
+  retTime: string;
 }

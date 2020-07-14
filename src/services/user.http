@@ -4,3 +4,10 @@ GET https://reqres.in/api/users/2 HTTP/1.1
 
 GET https://reqres.in/api/users?page=2 HTTP/1.1
 
+
+
+###
+
+@Host=https://test-web01.nn.com
+GET {{Host}}/nchannel/channel/business/findGameTags/
+?size=50

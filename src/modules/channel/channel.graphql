@@ -1,0 +1,13 @@
+type GameTag {
+  gameTagId: ID!
+  isShow: Int
+  tagName: String
+}
+
+type Query {
+  findGameTags(findGameTagsInput: FindGameTagsInput): [GameTag!]
+}
+
+input FindGameTagsInput {
+  size: Int
+}

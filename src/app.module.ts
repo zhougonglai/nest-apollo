@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './modules/user/user.module';
 import { QuantModule } from './modules/quant/quant.module';
 import { EventsModule } from './modules/events/events.module';
+import { ChannelModule } from './modules/channel/channel.module';
 
 @Module({
   imports: [
@@ -12,9 +12,9 @@ import { EventsModule } from './modules/events/events.module';
       typePaths: ['./**/*.graphql', './**/*.gql'],
       installSubscriptionHandlers: true,
     }),
-    UserModule,
     QuantModule,
     EventsModule,
+    ChannelModule,
   ],
   controllers: [AppController],
   providers: [AppService],
