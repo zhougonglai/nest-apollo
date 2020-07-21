@@ -17,4 +17,4 @@ jobs:
           node-version: '12'
       - run: npm install
       - run: npm build
-      - run: npm start:prod
+      - run: npm run start:prod
