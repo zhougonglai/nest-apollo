@@ -6,9 +6,9 @@ const envConfig = (path) => dotenv.parse(fs.readFileSync(path));
 
 const env = envConfig(path.resolve(__dirname, '../', '.env'));
 
-const dynamicENV = envConfig(
-  path.resolve(__dirname, '../', `${process.env.NODE_ENV}.env`),
-);
+const dynamicENV = process.env.NODE_ENV
+  ? envConfig(path.resolve(__dirname, '../', `${process.env.NODE_ENV}.env`))
+  : {};
 
 export default {
   ...env,

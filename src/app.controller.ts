@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import * as constants from './constants';
+import constants from './constants';
 
 @Controller()
 export class AppController {
@@ -8,7 +8,6 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    console.log('constants', constants.default);
     return this.appService.getHello();
   }
 }
